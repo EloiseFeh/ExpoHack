@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useEffect, useContext, useRef} from "react";
 import { Rating } from "primereact/rating";
 import { Button } from "primereact/button";
 import { InputNumber } from 'primereact/inputnumber';
@@ -7,15 +7,26 @@ import { db } from '../../services/firebaseConnections';
 import { AuthContext } from '../../services/auth';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { useNavigate } from "react-router-dom";
+import { Toast } from "primereact/toast";
         
 import "../../styles/Request.css";
 
 const FinishRequest = () => {
+    const toast = useRef(null);
+
+    const showSuccess = () => {
+        toast.current.show({severity:'success', summary: 'Pedido realizado com sucesso!', detail:'Você irá para a tela dos seus pedidos', life: 3000});
+    }
     const navigation = useNavigate();
 
     const handleBack = () => {
         navigation(-1);
     }
+
+    const goToMyRequests = () => {
+        navigation(`/my-requests/`);
+    }
+
     const [quantity, setQuantity] = useState(0);
     const { id } = useParams();
     const [produto, setProdutos] = useState([]);
@@ -62,6 +73,8 @@ const FinishRequest = () => {
           },)
           
             .then(() => {
+                showSuccess();
+                goToMyRequests();
               console.log(produto)
             })
             .catch((error) => {
@@ -71,6 +84,7 @@ const FinishRequest = () => {
       }
     return (
         <div>
+            <Toast ref={toast} />
             <div className="header container flex mt-8 justify-between items-center">
                 <h1 className="title font-bold text-3xl align-middle"> <span onClick={handleBack}>&lt;</span> Remessa </h1>
                 <div className="profile-div w-14 h-14 rounded-full bg-white">
@@ -119,7 +133,7 @@ const FinishRequest = () => {
                     </span>
                 </div>
 
-                <Button label="Finalizar Pedido" onClick={updateProduto}className="finish flex self-center w-full h-11 align-middle mt-4" />
+                <Button label="Finalizar Pedido" onClick={updateProduto} className="finish flex self-center w-full h-11 align-middle mt-4" />
             </div>
         </div>
     );

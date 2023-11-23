@@ -45,6 +45,7 @@ const App = () => {
                       <Route path="/suppliers/:id" element={<SupplierPage />} />
                       <Route path="/requests/:id" element={<Requests />} />
                       <Route path="/finish-request/:id" element={<FinishRequest/>}/>
+                      <Route path="/my-requests" element={<MyRequests />} />
                       <Route path="/cadastro" element={<Cadastro />} />
                   </Routes>
                 </AuthProvider>

@@ -11,6 +11,7 @@ import AuthProvider from "./services/auth";
 import CategoryPage from "./pages/Category/category";
 import SupplierPage from "./pages/Supplier/Supplier";
 import FinishRequest from "./pages/Requests/FinishRequest";
+import MyRequests from "./pages/Requests/MyRequests";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +43,7 @@ const App = () => {
                       <Route path="/home" element={<Home />} />
                       <Route path="/categories/:id" element={<CategoryPage />} />
                       <Route path="/suppliers/:id" element={<SupplierPage />} />
+                      <Route path="/my-requests" element={<MyRequests />} />
                       <Route path="/request" element={<Requests />} />
                       <Route path="/finish-request" element={<FinishRequest/>}/>
                       <Route path="/cadastro" element={<Cadastro />} />

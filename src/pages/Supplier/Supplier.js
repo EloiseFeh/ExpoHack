@@ -55,7 +55,19 @@ const SupplierPage = () => {
                 <div>
                     <p className="text-[#8F9F2C]">{supplier.descricao}</p>
                 </div>
-                <h1 className="categorie-title font-medium text-left text-3xl mt-4 mb-4">Mais pedidos </h1>
+                
+                <div>
+                    <h1 className="most-wanted-title font-bold text-left text-3xl mt-4 mb-4">Mais pedidos </h1>
+
+                    <div className="most-wanted-list">
+                    <div className="most-wanted-item">
+                        <img src="../assets/sacoKraft.svg" alt="Saco Kraft" className="category-img w-full h-full"/>
+                    </div>
+                    <div className="most-wanted-item">
+                        <img src="../assets/caixaCorreio.svg" alt="Caixa Correio" className="category-img w-full h-full"/>
+                    </div>
+                    </div>
+                </div>
             </div>
             
         </div>

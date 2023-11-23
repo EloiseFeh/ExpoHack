@@ -34,10 +34,10 @@ const Home = () => {
                 <div className="expires-div h-1/2">
                     <h1 className="expires-title font-medium text-left text-3xl mt-4 mb-4">Expira essa semana</h1>
                     <div className="expirations flex justify-between flex-wrap">
-                        <Link to="/expirations/1" className="expiration-card rounded-2xl">
+                        <Link to="/request" className="expiration-card rounded-2xl">
                             <img src="../assets/expGarrafa.svg" alt="Garrafas de Vidro" className="category-img w-full h-full"/>
                         </Link>
-                        <Link to="/expirations/2" className="expiration-card rounded-2xl">
+                        <Link to="/request" className="expiration-card rounded-2xl">
                         <img src="../assets/expCaixa.svg" alt="Caixas de papel" className="category-img w-full h-full"/>
                         </Link>
                     </div>

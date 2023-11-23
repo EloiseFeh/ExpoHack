@@ -10,6 +10,7 @@ import Cadastro from "./pages/Cadastro";
 import AuthProvider from "./services/auth";
 import CategoryPage from "./pages/Category/category";
 import SupplierPage from "./pages/Supplier/Supplier";
+import FinishRequest from "./pages/Requests/FinishRequest";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +43,7 @@ const App = () => {
                       <Route path="/categories/:id" element={<CategoryPage />} />
                       <Route path="/suppliers/:id" element={<SupplierPage />} />
                       <Route path="/requests" element={<Requests />} />
+                      <Route path="/finish-request" element={<FinishRequest/>}/>
                       <Route path="/cadastro" element={<Cadastro />} />
                   </Routes>
                 </AuthProvider>

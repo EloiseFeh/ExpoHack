@@ -1,0 +1,21 @@
+.green-text{
+    color: #AAB438;
+}
+
+.yellow-text{
+    color: #E8B44B;
+}
+
+.button-submit{
+    background-color: #E8B44B !important;
+    color: #fff !important;
+}
+
+.finish{
+    background-color: #AAB438 !important;
+    color: #fff !important;
+}
+
+.qtd-input{
+    border: 1px solid #AAB438 !important;
+}

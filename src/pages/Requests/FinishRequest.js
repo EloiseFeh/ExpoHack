@@ -1,10 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
 import { Rating } from "primereact/rating";
 import { Button } from "primereact/button";
+import { InputNumber } from 'primereact/inputnumber';
+        
 import "../../styles/Request.css";
 
-const Requests = () => {
+const FinishRequest = () => {
+    const [quantity, setQuantity] = useState();
     return (
         <div>
             <div className="header container flex mt-8 justify-between items-center">
@@ -18,9 +20,12 @@ const Requests = () => {
                     <h1 className="request-title green-text font-medium text-left text-2xl mt-4 mb-4">Empacota e Vai</h1>
                     <Rating value={4} readOnly stars={5} cancel={false} />
                 </div>
+
                 <img src="../assets/caixas.svg" alt="caixas" className="request-img w-full"/>
-                <div className="description green-text font-medium mt-4">
-                    MEDIDAS (C x L x A)- 32 x 24 x 20 cm QUANTIDADE MÍNIMA PARA ENVIO - 1000 UNIDADES
+                
+                <div className="set-quantity flex mt-4 items-center">
+                    <h1 className="mr-5 font-bold">Quantidade: </h1>
+                    <InputNumber className="border-amber-600 h-11 qtd-input" inputId="withoutgrouping" value={quantity} onValueChange={(e) => setQuantity(e.value)} useGrouping={false} />
                 </div>
 
                 <div className="request-info mt-4">
@@ -48,12 +53,10 @@ const Requests = () => {
                     </span>
                 </div>
 
-                <Link to="/finish-request">
-                    <Button label="Realizar Pedido" className="button-submit flex self-center w-full h-11 align-middle mt-4" />
-                </Link>
+                <Button label="Finalizar Pedido" className="finish flex self-center w-full h-11 align-middle mt-4" />
             </div>
         </div>
     );
 }
 
-export default Requests;
+export default FinishRequest;

@@ -32,7 +32,7 @@ const Login = () => {
                     <label htmlFor="senha" className="mr-6" >Senha</label>
                     <Password value={senha} onChange={(e) => setSenha(e.target.value)} toggleMask feedback={false} />
                 </div>
-                <Button label={loadingAuth ? 'Carregando...' : 'Entrar'} className="bg-secondary-accent" type="submit"/>
+                <Button label={loadingAuth ? 'Carregando...' : 'Entrar'} className="bg-orange mt-4" type="submit"/>
             </div>
             <Toast ref={toast} />
         </form>

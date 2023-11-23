@@ -16,6 +16,7 @@ module.exports = {
         'secondary-tint': '#E8F6FF',
         'light-error': '#f0664a',
         'primary-gray': '#A6ABBB',
+        'bg-orange': '#E8B44B',
       },
       text:{
         'primary-accent': '#62D2A2',

@@ -8,6 +8,7 @@ import Login from "./pages/Login/Login";
 import Requests from "./pages/Requests/Requests";
 import Cadastro from "./pages/Cadastro";
 import AuthProvider from "./services/auth";
+import CategoryPage from "./pages/Category/category";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,6 +38,7 @@ const App = () => {
                   <Routes>
                     <Route path="/" element={<Login />} />
                       <Route path="/home" element={<Home />} />
+                      <Route path="/categories/:id" element={<CategoryPage />} />
                       <Route path="/requests" element={<Requests />} />
                       <Route path="/cadastro" element={<Cadastro />} />
                   </Routes>

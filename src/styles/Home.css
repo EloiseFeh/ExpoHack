@@ -1,0 +1,18 @@
+.header{
+    background-color: #AAB438;
+    display: flex;
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.categorie-title {
+    color: #AAB438;
+}
+
+.expires-title {
+    color: #D8A94D;
+}

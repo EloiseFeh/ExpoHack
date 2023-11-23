@@ -1,0 +1,25 @@
+.category-title{
+    color: white;
+}
+
+.category-card{
+    background-color: #AAB438;
+    width: 45% !important;
+    height: 7rem !important;
+    margin-bottom: 2rem;
+}
+
+.expiration-card{
+    background-color: #D8A94D;
+    width: 47% !important;
+    height: 8rem !important;
+    object-fit: cover !important;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 1.5rem;
+}
+
+.expiration-title{
+    color: white;
+}

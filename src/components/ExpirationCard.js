@@ -10,7 +10,7 @@ const ExpirationCard = (props) => {
         style={
             { backgroundImage: `url(${props.img})`}
         }>
-            <h1 className="expiration-title mt-1 mb-1 font-bold">{props.title}</h1>
+            <h1 className="expiration-title mt-1 mb-2 font-bold">{props.title}</h1>
         </div>
     );
 };

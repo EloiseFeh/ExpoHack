@@ -19,16 +19,16 @@ const Home = () => {
                     <h1 className="categorie-title font-medium text-left text-3xl mt-4 mb-4">Categorias</h1>
                     <div className="categories flex justify-between flex-wrap">
                         <Link to="/categories/1" className="category-card rounded-2xl">
-                            <CategoryCard img="../assets/rotulo.png" title="Rótulos"/>
+                            <img src="../assets/cardRotulos.png" alt="rótulos" className="category-img w-full h-full"/>
                         </Link>
                         <Link to="/categories/2" className="category-card rounded-2xl">
-                            <CategoryCard img="../assets/rotulo.png" title="Embalagens"/>
+                            <img src="../assets/cardEmb.png" alt="embalagens" className="category-img w-full h-full"/>
                         </Link>
                         <Link to="/categories/3" className="category-card rounded-2xl">
-                            <CategoryCard img="../assets/rotulo.png" title="Biológicos"/>
+                            <img src="../assets/cardBio.png" alt="biólogicos" className="category-img w-full h-full"/>
                         </Link>
                         <Link to="/categories/4" className="category-card rounded-2xl">
-                            <CategoryCard img="../assets/rotulo.png" title="Químicos"/>
+                            <img src="../assets/cardQuim.png" alt="químicos" className="category-img w-full h-full"/>
                         </Link>
                     </div>
                 </div>
@@ -36,11 +36,11 @@ const Home = () => {
                 <div className="expires-div h-1/2">
                     <h1 className="expires-title font-medium text-left text-3xl mt-4 mb-4">Expira essa semana</h1>
                     <div className="expirations flex justify-between flex-wrap">
-                        <Link to="/expirations/1" className="expiration-card rounded-2xl" style={{ backgroundImage: `url(../assets/rotulo.png)`}}>
-                            <ExpirationCard  title="Garrafas de vidro"/>
+                        <Link to="/expirations/1" className="expiration-card rounded-2xl">
+                            <img src="../assets/expGarrafa.png" alt="Garrafas de Vidro" className="category-img w-full h-full"/>
                         </Link>
-                        <Link to="/expirations/2" className="expiration-card rounded-2xl" style={{ backgroundImage: `url(../assets/rotulo.png)`}}>
-                            <ExpirationCard title="Caixas de papel"/>
+                        <Link to="/expirations/2" className="expiration-card rounded-2xl">
+                        <img src="../assets/expCaixa.png" alt="Caixas de papel" className="category-img w-full h-full"/>
                         </Link>
                     </div>
                 </div>

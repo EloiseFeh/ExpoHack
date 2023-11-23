@@ -53,7 +53,7 @@ const CategoryPage = () => {
                         {
                             suppliers.map((supplier, index) => {
                                 return (
-                                    <Link to="/suppliers/1" key={index}  className="expiration-card w-full rounded-2xl">
+                                    <Link to={`/suppliers/${supplier.id}`} key={index}  className="expiration-card w-full rounded-2xl">
                                         <SupplierCard title={supplier.nome} category={supplier.categoria} rating={4} />
                                     </Link>
                                 );

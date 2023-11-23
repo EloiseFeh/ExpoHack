@@ -9,6 +9,7 @@ import Requests from "./pages/Requests/Requests";
 import Cadastro from "./pages/Cadastro";
 import AuthProvider from "./services/auth";
 import CategoryPage from "./pages/Category/category";
+import SupplierPage from "./pages/Supplier/Supplier";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,6 +40,7 @@ const App = () => {
                     <Route path="/" element={<Login />} />
                       <Route path="/home" element={<Home />} />
                       <Route path="/categories/:id" element={<CategoryPage />} />
+                      <Route path="/suppliers/:id" element={<SupplierPage />} />
                       <Route path="/requests" element={<Requests />} />
                       <Route path="/cadastro" element={<Cadastro />} />
                   </Routes>

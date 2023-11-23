@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Rating } from "primereact/rating";
 import { Button } from "primereact/button";
 import { useParams } from "react-router-dom";
@@ -8,6 +8,11 @@ import { doc, getDoc } from 'firebase/firestore';
 import "../../styles/Request.css";
 
 const Requests = () => {
+    const navigation = useNavigate();
+
+    const handleBack = () => {
+        navigation(-1);
+    }
     const { id } = useParams();
     const [produto, setProdutos] = useState([]);
 
@@ -43,7 +48,7 @@ const Requests = () => {
     return (
         <div>
             <div className="header container flex mt-8 justify-between items-center">
-                <h1 className="title font-bold text-3xl align-middle"> &lt; Remessa </h1>
+                <h1 className="title font-bold text-3xl align-middle"><span onClick={handleBack}>&lt;</span> Remessa </h1>
                 <div className="profile-div w-14 h-14 rounded-full bg-white">
                 </div>
             </div>

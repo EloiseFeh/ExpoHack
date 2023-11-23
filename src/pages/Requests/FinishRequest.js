@@ -6,10 +6,16 @@ import { useParams } from "react-router-dom";
 import { db } from '../../services/firebaseConnections';
 import { AuthContext } from '../../services/auth';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { useNavigate } from "react-router-dom";
         
 import "../../styles/Request.css";
 
 const FinishRequest = () => {
+    const navigation = useNavigate();
+
+    const handleBack = () => {
+        navigation(-1);
+    }
     const [quantity, setQuantity] = useState(0);
     const { id } = useParams();
     const [produto, setProdutos] = useState([]);
@@ -66,7 +72,7 @@ const FinishRequest = () => {
     return (
         <div>
             <div className="header container flex mt-8 justify-between items-center">
-                <h1 className="title font-bold text-3xl align-middle"> &lt; Remessa </h1>
+                <h1 className="title font-bold text-3xl align-middle"> <span onClick={handleBack}>&lt;</span> Remessa </h1>
                 <div className="profile-div w-14 h-14 rounded-full bg-white">
                 </div>
             </div>

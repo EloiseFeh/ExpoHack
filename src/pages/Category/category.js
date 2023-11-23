@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SupplierCard from "../../components/SupplierCard";
 import { getDocs, collection } from "@firebase/firestore";
 import { db } from "../../services/firebaseConnections";
 
 const CategoryPage = () => {
+
+    const navigation = useNavigate();
+
+    const handleBack = () => {
+        navigation(-1);
+    }
 
     const [suppliers, setSuppliers] = useState([]);
 
@@ -26,7 +32,7 @@ const CategoryPage = () => {
     return (
         <div>
             <div className="header container flex mt-8 justify-between items-center">
-                <h1 className="title font-bold text-3xl align-middle"> &lt; Embalagens </h1>
+                <h1 className="title font-bold text-3xl align-middle"> <span onClick={handleBack}>&lt;</span> Embalagens </h1>
                 <div className="profile-div w-14 h-14 rounded-full bg-white">
                 </div>
             </div>

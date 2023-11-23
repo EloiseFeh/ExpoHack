@@ -11,6 +11,7 @@ import AuthProvider from "./services/auth";
 import CategoryPage from "./pages/Category/category";
 import SupplierPage from "./pages/Supplier/Supplier";
 import FinishRequest from "./pages/Requests/FinishRequest";
+import MyRequests from "./pages/Requests/MyRequests";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);

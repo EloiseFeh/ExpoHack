@@ -1,18 +1,17 @@
-# Getting Started with Create React App
+# Bem-vindo ao Campo Conecta
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esse projeto foi desenvolvivido pela equipe BeeTeam
 
-## Available Scripts
+## Scripts disponíveis
 
-In the project directory, you can run:
+Dentro do repositório, rode o comando:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para acessar a plataforma, insira as credenciais
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+email: zoe@gmail.com
+senha: 123456
 
 ### `npm test`
 

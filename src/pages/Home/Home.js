@@ -1,8 +1,32 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import "../../styles/Home.css";
+import { getDocs, collection } from "@firebase/firestore";
+import { db } from "../../services/firebaseConnections";
 
 const Home = () => {
+
+    const [produto, setProdutos] = useState([]);
+
+    const getProdutos = collection(db, "produtos");
+
+    useEffect(() => {
+        async function loadProduto() {
+            const query = await getDocs(getProdutos).then((snapshot) => {
+                const data = [];
+                snapshot.forEach((doc) => {
+                    data.push({
+                        id: doc.id, 
+                        titulo: doc.data().titulo, 
+                      });
+                });
+                setProdutos(data);
+                return data;
+            });
+        }
+        loadProduto();
+    });
+
     return (
         <div className="">
             <div className="header container flex mt-8 justify-between items-center">
@@ -34,10 +58,15 @@ const Home = () => {
                 <div className="expires-div h-1/2">
                     <h1 className="expires-title font-medium text-left text-3xl mt-4 mb-4">Expira essa semana</h1>
                     <div className="expirations flex justify-between flex-wrap">
-                        <Link to="/expirations/1" className="expiration-card rounded-2xl">
+                        {produto.map((item, index) =>(
+                            <div key={index}>
+                        <Link to={`/requests/${item.id}`}  className="expiration-card rounded-2xl">
                             <img src="../assets/expGarrafa.svg" alt="Garrafas de Vidro" className="category-img w-full h-full"/>
                         </Link>
-                        <Link to="/expirations/2" className="expiration-card rounded-2xl">
+                        </div>
+                        ))}
+                       
+                        <Link to="/requests" className="expiration-card rounded-2xl">
                         <img src="../assets/expCaixa.svg" alt="Caixas de papel" className="category-img w-full h-full"/>
                         </Link>
                     </div>
